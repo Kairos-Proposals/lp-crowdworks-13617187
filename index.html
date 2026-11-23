@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairosからのご提案｜株式会社florka様 Shopify LP制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1F3B2D;
+    --forest-deep:#13281E;
+    --sage:#7A9B7E;
+    --bg:#EEF0E7;
+    --bg-soft:#F7F8F2;
+    --berry:#A8375A;
+    --gold:#C9A05C;
+    --ink:#16261C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.85;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Shippori Mincho B1',serif;
+  }
+  img{max-width:100%;}
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  a{text-decoration:none;}
+
+  /* ===== 共通装飾：葉っぱ ===== */
+  .leaf{
+    position:absolute;
+    background:linear-gradient(135deg,var(--sage),var(--forest));
+    border-radius:0% 100% 0% 100%/0% 100% 0% 100%;
+    opacity:.18;
+    filter:blur(.3px);
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(122,155,126,.35), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(201,160,92,.25), transparent 50%),
+      linear-gradient(160deg,var(--forest-deep) 0%, var(--forest) 55%, #2A4A38 100%);
+    color:var(--bg-soft);
+    overflow:hidden;
+    padding:120px 0 80px;
+  }
+  .hero .leaf{width:260px;height:260px;top:-60px;right:-60px;opacity:.25;}
+  .hero .leaf.l2{width:180px;height:180px;bottom:-40px;left:-40px;transform:rotate(40deg);opacity:.2;}
+  .hero .leaf.l3{width:90px;height:90px;top:40%;left:8%;opacity:.15;transform:rotate(80deg);}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 18px;
+    border:1px solid rgba(238,240,231,.5);
+    border-radius:999px;
+    font-size:.8rem;
+    letter-spacing:.12em;
+    color:var(--bg-soft);
+    margin-bottom:28px;
+  }
+  .badge::before{
+    content:'';
+    width:7px;height:7px;
+    background:var(--gold);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2rem,4.6vw,3.6rem);
+    font-weight:800;
+    line-height:1.6;
+    letter-spacing:.02em;
+    max-width:14ch;
+    position:relative;
+    z-index:2;
+  }
+  .hero h1 span{
+    color:var(--gold);
+  }
+  .hero p.lead{
+    margin-top:28px;
+    max-width:560px;
+    font-size:1rem;
+    color:rgba(238,240,231,.85);
+    position:relative;z-index:2;
+  }
+  .hero .meta{
+    margin-top:48px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    position:relative;z-index:2;
+  }
+  .meta-chip{
+    background:rgba(238,240,231,.08);
+    border:1px solid rgba(238,240,231,.25);
+    padding:10px 18px;
+    border-radius:10px;
+    font-size:.82rem;
+    color:var(--bg-soft);
+  }
+  .meta-chip b{color:var(--gold);font-weight:700;}
+
+  /* ===== SECTION 共通 ===== */
+  section{
+    padding:100px 0;
+    position:relative;
+  }
+  .sec-tag{
+    display:inline-block;
+    font-size:.78rem;
+    letter-spacing:.2em;
+    color:var(--berry);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .sec-title{
+    font-size:clamp(1.6rem,3vw,2.3rem);
+    color:var(--forest-deep);
+    font-weight:800;
+    margin-bottom:28px;
+    line-height:1.6;
+  }
+  .sec-title em{
+    font-style:normal;
+    color:var(--berry);
+  }
+
+  /* ===== 課題理解 ===== */
+  .understand{
+    background:var(--bg-soft);
+  }
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .understand-text p{
+    margin-bottom:20px;
+    font-size:.98rem;
+    color:#33483C;
+  }
+  .understand-card{
+    background:#fff;
+    border:1px solid #E1E6DA;
+    border-radius:18px;
+    padding:36px 32px;
+    position:relative;
+    box-shadow:0 20px 45px -25px rgba(31,59,45,.3);
+  }
+  .understand-card::before{
+    content:'';
+    position:absolute;
+    top:-14px;left:28px;
+    width:34px;height:34px;
+    background:var(--gold);
+    border-radius:0% 100% 0% 100%;
+    transform:rotate(20deg);
+  }
+  .u-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  .u-item:last-child{margin-bottom:0;}
+  .u-dot{
+    min-width:10px;height:10px;
+    margin-top:8px;
+    border-radius:50%;
+    background:var(--sage);
+  }
+  .u-item h4{
+    font-size:.95rem;
+    color:var(--forest-deep);
+    margin-bottom:4px;
+    font-weight:700;
+  }
+  .u-item p{font-size:.85rem;color:#4A5C50;}
+
+  /* ===== 提供価値 ===== */
+  .value{
+    background:var(--bg);
+  }
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .value-card{
+    background:var(--bg-soft);
+    border-radius:20px;
+    padding:38px 28px;
+    border:1px solid #E1E6DA;
+    position:relative;
+    transition:transform .35s ease, box-shadow .35s ease;
+    overflow:hidden;
+  }
+  .value-card::after{
+    content:'';
+    position:absolute;
+    width:140px;height:140px;
+    right:-50px;bottom:-50px;
+    background:radial-gradient(circle,rgba(122,155,126,.25),transparent 70%);
+    border-radius:50%;
+  }
+  .value-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 50px -25px rgba(31,59,45,.4);
+  }
+  .v-num{
+    font-family:'Shippori Mincho B1',serif;
+    font-size:2.2rem;
+    color:var(--gold);
+    font-weight:800;
+    margin-bottom:16px;
+  }
+  .value-card h3{
+    font-size:1.08rem;
+    color:var(--forest-deep);
+    margin-bottom:12px;
+    font-weight:700;
+  }
+  .value-card p{
+    font-size:.85rem;
+    color:#45584B;
+    position:relative;z-index:2;
+  }
+
+  /* ===== スケジュール ===== */
+  .flow{
+    background:linear-gradient(180deg,var(--bg-soft),var(--bg));
+  }
+  .timeline{
+    position:relative;
+    margin-top:50px;
+    padding-left:36px;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    left:9px;top:0;bottom:0;
+    width:2px;
+    background:linear-gradient(180deg,var(--sage),var(--berry));
+  }
+  .t-item{
+    position:relative;
+    padding-bottom:48px;
+  }
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:'';
+    position:absolute;
+    left:-36px;top:2px;
+    width:20px;height:20px;
+    border-radius:50%;
+    background:var(--bg-soft);
+    border:3px solid var(--forest);
+  }
+  .t-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .t-stage{
+    font-weight:800;
+    color:var(--forest-deep);
+    font-size:1.05rem;
+  }
+  .t-time{
+    font-size:.78rem;
+    color:var(--berry);
+    background:rgba(168,55,90,.08);
+    padding:3px 12px;
+    border-radius:999px;
+    font-weight:700;
+  }
+  .t-item p{
+    font-size:.88rem;
+    color:#45584B;
+    max-width:560px;
+  }
+
+  /* ===== クロージング ===== */
+  .closing{
+    background:linear-gradient(150deg,var(--forest-deep),var(--forest) 60%,#2E4F3D);
+    color:var(--bg-soft);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .closing .leaf{width:200px;height:200px;top:-50px;left:-50px;opacity:.2;}
+  .closing .leaf.r2{width:260px;height:260px;bottom:-80px;right:-60px;opacity:.15;transform:rotate(60deg);}
+  .closing h2{
+    font-size:clamp(1.6rem,3.4vw,2.4rem);
+    font-weight:800;
+    margin-bottom:22px;
+    position:relative;z-index:2;
+  }
+  .closing p{
+    max-width:520px;
+    margin:0 auto 40px;
+    color:rgba(238,240,231,.85);
+    font-size:.95rem;
+    position:relative;z-index:2;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--forest-deep);
+    font-weight:700;
+    padding:18px 48px;
+    border-radius:999px;
+    font-size:1rem;
+    letter-spacing:.05em;
+    box-shadow:0 20px 40px -15px rgba(201,160,92,.6);
+    position:relative;z-index:2;
+    transition:transform .3s ease;
+  }
+  .cta-btn:hover{transform:translateY(-4px);}
+  .closing .sign{
+    margin-top:50px;
+    font-size:.78rem;
+    letter-spacing:.2em;
+    color:rgba(238,240,231,.6);
+    position:relative;z-index:2;
+  }
+
+  footer{
+    background:var(--forest-deep);
+    color:rgba(238,240,231,.5);
+    text-align:center;
+    padding:28px 0;
+    font-size:.75rem;
+    letter-spacing:.05em;
+  }
+
+  @media (max-width:860px){
+    .understand-grid{grid-template-columns:1fr;gap:36px;}
+    .value-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:600px){
+    section{padding:70px 0;}
+    .hero{padding:100px 0 60px;}
+    .value-grid{grid-template-columns:1fr;}
+    .understand-card{padding:28px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <span class="leaf"></span>
+  <span class="leaf l2"></span>
+  <span class="leaf l3"></span>
+  <div class="container">
+    <span class="badge">PROPOSAL FROM KAIROS</span>
+    <h1>florkaという<span>土壌</span>に、<br>信頼が育つ一枚のLPを。</h1>
+    <p class="lead">
+      健康を選ぶ女性たちの「これなら続けられそう」という直感は、
+      最初の数秒の佇まいで決まります。florka様の食品ブランドの魅力を、
+      Shopify上で静かに、確かに伝わる形にするご提案です。
+    </p>
+    <div class="meta">
+      <span class="meta-chip">対象 <b>株式会社florka 様</b></span>
+      <span class="meta-chip">案件 <b>Shopify LP制作／食品カテゴリー</b></span>
+      <span class="meta-chip">納期目標 <b>12月27日</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 課題理解 ===== -->
+<section class="understand">
+  <div class="container">
+    <span class="sec-tag">UNDERSTANDING</span>
+    <h2 class="sec-title">ご依頼内容、<em>そのまま</em>受け止めています。</h2>
+    <div class="understand-grid">
+      <div class="understand-text">
+        <p>
+          今回のご依頼は、30〜50代の健康意識の高い女性に向けた、食品カテゴリーのShopify LP制作。
+          12月27日という明確な期日があり、デザインからコーディング、レスポンシブ対応まで一式を、
+          限られたご予算の中で形にする必要があります。
+        </p>
+        <p>
+          大切なのは「映える」ことよりも、「安心して選べる」こと。派手な演出よりも、
+          成分・想い・作り手の顔が見える誠実な構成こそが、このターゲット層には響くはずです。
+          素材のご相談にも柔軟に対応しながら、まずは信頼できる土台づくりからご一緒します。
+        </p>
+      </div>
+      <div class="understand-card">
+        <div class="u-item">
+          <span class="u-dot"></span>
+          <div>
+            <h4>ターゲットは30〜50代女性</h4>
+            <p>情報の信頼性と、読みやすさ・余白のバランスを重視した設計にします。</p>
+          </div>
+        </div>
+        <div class="u-item">
+          <span class="u-dot"></span>
+          <div>
+            <h4>健康意識の高い層への訴求</h4>
+            <p>成分・製法・こだわりを「盛らず、誇張せず」自然に伝える構成。</p>
+          </div>
+        </div>
+        <div class="u-item">
+          <span class="u-dot"></span>
+          <div>
+            <h4>12月27日までの短納期</h4>
+            <p>逆算スケジュールを先に共有し、確認待ちのロスを作らない進行。</p>
+          </div>
+        </div>
+        <div class="u-item">
+          <span class="u-dot"></span>
+          <div>
+            <h4>3〜5万円の予算感</h4>
+            <p>素材の有無に合わせ、必要な工程に絞った無理のないご提案額です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 提供価値 ===== -->
+<section class="value">
+  <div class="container">
+    <span class="sec-tag">WHAT KAIROS BRINGS</span>
+    <h2 class="sec-title">Kairosがfloraka様に<em>手渡せる</em>もの。</h2>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="v-num">01</div>
+        <h3>食品ブランド視点のデザイン</h3>
+        <p>派手さより信頼感。素材感・清潔感を軸に、購買への不安を一つずつ取り除くビジュアル構成を設計します。</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">02</div>
+        <h3>Shopify実装までワンストップ</h3>
+        <p>デザインだけで終わらせず、Shopifyテーマへのコーディング・設置まで一気通貫で対応します。</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">03</div>
+        <h3>完全レスポンシブ対応</h3>
+        <p>健康食品を調べる多くの女性がスマホ経由。片手操作でも読みやすい文字組み・タップ領域を設計します。</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">04</div>
+        <h3>素材不足も相談可能</h3>
+        <p>画像・文章が未確定でも、構成案の段階からヒアリングしながら一緒に形にしていきます。</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">05</div>
+        <h3>期日から逆算した進行管理</h3>
+        <p>12/27納品を起点に、確認のタイミングをあらかじめ設計。差し戻しの往復を最小限にします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 進め方・スケジュール ===== -->
+<section class="flow">
+  <div class="container">
+    <span class="sec-tag">PROCESS</span>
+    <h2 class="sec-title">種をまくように、<em>育てる</em>制作の流れ。</h2>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-stage">① ヒアリング・方向性確認</span>
+          <span class="t-time">ご依頼後 1〜2日</span>
+        </div>
+        <p>ブランドの想い、既存素材の有無、トーン＆マナーをすり合わせます。ワイヤーが未定の場合はこちらで叩き台をご用意します。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-stage">② デザイン（Figma）</span>
+          <span class="t-time">3〜4日</span>
+        </div>
+        <p>ターゲットに合わせたレイアウト・配色・写真の見せ方を設計。1回の確認で全体像をご確認いただけます。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-stage">③ コーディング・Shopify実装</span>
+          <span class="t-time">3〜4日</span>
+        </div>
+        <p>レスポンシブ対応を含めて実装。Shopifyテーマへの組み込みまで責任を持って行います。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-stage">④ 確認・微調整</span>
+          <span class="t-time">1〜2日</span>
+        </div>
+        <p>表示崩れ・文言・細部の調整を行い、公開前の最終チェックをします。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-stage">⑤ 納品</span>
+          <span class="t-time">12月27日まで</span>
+        </div>
+        <p>期日内の納品を徹底し、公開後のちょっとした調整にも柔軟に対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== クロージング ===== -->
+<section class="closing">
+  <span class="leaf"></span>
+  <span class="leaf r2"></span>
+  <div class="container">
+    <h2 class="serif">まずは、お話から始めませんか。</h2>
+    <p>
+      florka様が届けたい「健やかさ」を、スマホ画面の中でも
+      きちんと伝わる形にすること。それが今回のご提案の目的です。
+      実績やお見積りの詳細など、どんな小さなご質問でもお気軽にどうぞ。
+    </p>
+    <a href="#" class="cta-btn">Kairosに相談・見積もりを依頼する</a>
+    <div class="sign">KAIROS — WEB制作・システム開発チーム</div>
+  </div>
+</section>
+
+<footer>
+  © Kairos. Proposal prepared for 株式会社florka 様.
+</footer>
+
+</body>
+</html>
